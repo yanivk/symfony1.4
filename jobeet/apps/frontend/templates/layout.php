@@ -2,7 +2,9 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title>Jobeet - Your best job board</title>
+    <title><?php if (!include_slot('title')): ?>
+    Jobeet - Your best job board
+  <?php endif; ?></title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_javascripts() ?>
     <?php include_stylesheets() ?>
@@ -11,9 +13,11 @@
     <div id="container">
       <div id="header">
         <div class="content">
-          <h1><a href="<?php echo url_for('job/index') ?>">
-            <img src="/legacy/images/logo.jpg" alt="Jobeet Job Board" />
-          </a></h1>
+          <h1>
+            <a href="<?php echo url_for('@homepage') ?>">
+              <img src="/legacy/images/logo.jpg" alt="Jobeet Job Board" />
+            </a>
+          </h1>
  
           <div id="sub_header">
             <div class="post">
